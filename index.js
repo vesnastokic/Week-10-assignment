@@ -1,0 +1,1 @@
+document.getElementById('table-body').classList.add('custom-table');

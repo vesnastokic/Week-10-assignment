@@ -1,52 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo App</title>
-    <link rel="stylesheet"href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Table</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="index.css"> 
 </head>
-    <body class="container">
-  <br>
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-sm">
-                <div class="form-group">
-                    <label for="new-start-date">Start Date</label>
-                    <input type="date" class="form-control"id="new-start-date">
-                </div>
-            </div>
-        
-        <div class="row"></div>
-            <div class="col-sm">
-                <div class="form-group">
-                    <label for="new-end-date">End Date</label>
-                    <input type="date" class="form-control"id="new-end-date">
-
-                </div>
-            </div>
-        </div>
-        <div class="row">
-</div class="col-sm">
-            <div class="form-group">
-                <label for="new-task">Task</label>
-                <input type="text" class="form-control"id="new-tesk" placeholder="Task">
-                </div>
-</div>
-                </div>
-                <button id="add" class="btn btn-primary from-control">Create</button>
-
-        </div>
-    </div>
-   
-    </div>
-    <table id="list" class="table table-dark table-striped">
-        <tr></tr>
+<body>
+  
+  <div class="container">
+    <h1>My Table</h1>
+    
+    <!-- Table -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <tr>
+          <td>1</td>
+          <td>Vesna Stokic</td>
+          <td>vesnastokic019@gmail.com</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Konstantin Stokic</td>
+          <td>konstantinstokic019@gmail.com</td>
+        </tr>
+      </tbody>
     </table>
-</div>
-<script src="node_modules/jquery/dist/jquery.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    
+    <!-- Form -->
+    <form id="add-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+      </div>
+      <button type="button" class="btn btn-primary" onclick="addRow()">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function addRow() {
+      let name = document.getElementById('name').value;
+      let email = document.getElementById('email').value;
+      let table = document.getElementById('table-body');
+      let newRow = table.insertRow();
+      let cell1 = newRow.insertCell(0);
+      let cell2 = newRow.insertCell(1);
+      let cell3 = newRow.insertCell(2);
+      cell1.innerHTML = table.rows.length - 1; // Numbering rows starting from 1
+      cell2.innerHTML = name;
+      cell3.innerHTML = email;
+      document.getElementById('add-form').reset(); // Reset the form after adding row
+    }
+  </script>
 <script src="index.js"></script>
 </body>
 </html>

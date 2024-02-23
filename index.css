@@ -1,0 +1,18 @@
+.custom-table {
+    background-color:azure;
+  }
+  
+  .custom-table th {
+    background-color:blue; 
+    color:darkgray; 
+  }
+  
+  .custom-table td {
+    border-color:darkgray
+  }
+  
+  .custom-table input[type="text"],
+  .custom-table input[type="email"] {
+    width: 100%; 
+  }
+  
