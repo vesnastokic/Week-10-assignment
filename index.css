@@ -8,8 +8,11 @@
   }
   
   .custom-table td {
-    border-color:darkgray
+    border-color:black
   }
+
+  
+ 
   
   .custom-table input[type="text"],
   .custom-table input[type="email"] {
